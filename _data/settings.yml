@@ -4,12 +4,12 @@ disqus:
   disqus_shortname: 'millennial-3'
 
 menu:
-- {name: 'Interesting Facts', folder: 'pages', file: 'facts.html'}
-- {name: 'Learning Resources', folder: 'pages', file: 'resources.html'}
+- {name: '我的兴趣不是你的', folder: 'pages', file: 'facts.html'}
+- {name: '学习永无止境', folder: 'pages', file: 'resources.html'}
 - {name: 'Sample Posts', folder: 'pages', file: 'sample-posts.html'}
-- {name: 'Documentation', folder: 'pages', file: 'documentation.html'}
-- {name: 'About', folder: 'pages', file: 'about.html'}
-- {name: 'Contact', folder: 'pages', file: 'contact.html'}
+- {name: '博客', folder: 'pages', file: 'documentation.html'}
+- {name: '关于我也不知道', folder: 'pages', file: 'about.html'}
+- {name: '可以请别联系我', folder: 'pages', file: 'contact.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
@@ -25,8 +25,8 @@ pagination:
   next_page: 'Newer'
   previous_page: 'Older'
 
-sharing_button_prompt: 'Feel free to share!'
+sharing_button_prompt: '你要我就给'
 
-related_posts: 'You may also enjoy...'
+related_posts: '你说的都对'
 
-post_date_prefix: 'Written on'
+post_date_prefix: '正在憋。。。'
