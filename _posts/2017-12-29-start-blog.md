@@ -3,7 +3,7 @@ layout: post
 title: "开头就是不知所云"
 author: "Y.S"
 categories: documentation
-tags: [杂，简]
+tags: [杂,简]
 image: cuba-1.jpg
 ---
 
