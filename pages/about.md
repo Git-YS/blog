@@ -3,4 +3,13 @@ layout: misc
 title: About
 ---
 
-Millennial is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused publishing platform for your publication site or blog. You can find everything you need to get started under documentation. For more information on how to install and use this theme, check out [the documentation]({{ site.github.url }}{% post_url 2017-12-29-start-blog %}).
+ a 
+
+	liberalist cat-slave javaer coder
+ 	
+who involved in
+
+{% for item in site.data.settings.social %}
+<a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="false">{{item.desc}}</i></a>
+{% endfor %}
+  
