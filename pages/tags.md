@@ -22,7 +22,7 @@ title: Tags
 </ul>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/assets/js/jquery-tagcloud.js" type="text/javascript" charset="utf-8"></script> 
+<script src="{{ site.github.url }}/assets/js/jquery-tagcloud.js" type="text/javascript" charset="utf-8"></script> 
 <script language="javascript">
 $.fn.tagcloud.defaults = {
     size: {start: 1, end: 1, unit: 'em'},
