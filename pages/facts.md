@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Interesting Facts
+title: Gallery
 ---
-{% for post in site.categories.facts %}
-  <a href="{{ site.github.url }}{{ post.url }}">
-    <div class="featured-posts" {% if post.image %}style="background-image:url({{ site.github.url }}/assets/img/{{ post.image }})"{% endif %}>
-      <h2><span>{{ post.title }}</span></h2>
-    </div>
-  </a>
+{% for post in site.categories.gallery %}
+<div>
+	<a href="{{ site.github.url }}{{ post.url }}">
+	  <img class="featured-posts" src="{{ site.github.url }}/gallery/{{post.date | date:"%Y/%m/%d/" }}{{post.date | date:"%Y%m%d-" }}{{ post.title }}"/>
+	</a>
+</div>
 {% endfor %}

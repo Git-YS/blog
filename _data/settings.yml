@@ -4,9 +4,9 @@ disqus:
   disqus_shortname: 'millennial-3'
 
 menu:
-- {name: 'Gallery', folder: 'pages', file: 'facts/index.html'}
-- {name: 'Tags', folder: 'pages', file: 'tags/index.html'}
 - {name: 'Blogs', folder: 'pages', file: 'documentation/index.html'}
+- {name: 'Tags', folder: 'pages', file: 'tags/index.html'}
+- {name: 'Gallery', folder: 'pages', file: 'facts/index.html'}
 - {name: 'About', folder: 'pages', file: 'about/index.html'}
 - {name: 'Pending', folder: 'pages', file: 'resources/index.html'}
 #- {name: '可以请别联系我', folder: 'pages', file: 'contact/index.html'}
@@ -15,10 +15,12 @@ menu:
 social:
 #- {icon: 'weibo', link: 'https://twitter.com/paululele'}
 #- {icon: 'user', link: 'https://www.facebook.com/Le.Paul.94'}
-- {icon: 'instagram', link: 'https://instagram.com/paululele'，desc：''}
-- {icon: 'envelope', link: 'mailto:jsymsong@gmail.com'，desc：''}
+- {icon: 'instagram', link: 'https://instagram.com/paululele',desc：''}
+- {icon: 'envelope', link: 'mailto:jsymsong@gmail.com',desc：''}
 # - {icon: 'rss-square', link: 'rss-feed.xml'}
 
+#include file dir
+include_dir: '/assets/_includes'
 # Customize site text
 pagination:
   next_page: 'Newer'
