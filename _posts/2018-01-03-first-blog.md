@@ -13,4 +13,5 @@ image: 1.jpg
 			1、think in java
 			2、500 Lines or Less
 			
-			3、陈懋平
+			3、万水千山走遍
+			4、鼠疫、局外人
