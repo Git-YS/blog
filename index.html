@@ -1,4 +1,49 @@
 ---
-layout: home
+layout: default
 title: Home
 ---
+<h2 align="center">左 还是 右 这是一个问题？</h2>
+<div>
+	<div id="left" style="width: 50%;float: left;">
+		<img style="width: 50%;height: 200px;background-color: darkgrey;" />
+		<div align="center"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;<b id='left-val'>0</b><br>
+		<span class="pagination-button">似乎左边不错</span></div>
+	</div>	
+	<div id="right" style="width: 50%;float: left;">
+		<img style="width: 50%;height: 200px;background-color: darkseagreen;" />
+		<div align="center"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;<b>0</b><br>
+		<span class="pagination-button">还是选择右边</span></div>
+	</div>	
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript">
+	//create
+	AV.initialize("{{site.data.settings.leancloud.app_id}}", "{{site.data.settings.leancloud.app_id}}");
+	var Icons = AV.Object.extend('icon_count');
+	var leftIcon = new Icons();
+	leftIcon.id = '5a571b26ac502e006e148b8f';
+  	leftIcon.fetch().then(function (leftIcon) {
+    //leftIcon 是从服务器加载到本地的 leftIcon 对象
+    var count = leftIcon.get('count');
+    $('#left b').text(leftIcon.count);
+  	}, function (error) {
+		console.error(error);
+  	});
+	var rightIcon = new Icons();
+  	rightIcon.id = '5a571b36a22b9d003f1fe65c';
+  	rightIcon.fetch().then(function (rightIcon) {
+    //rightIcon 是从服务器加载到本地的 rightIcon 对象
+    var count = rightIcon.get('count');
+    $('#right b').text(rightIcon.count);
+  	}, function (error) {
+		console.error(error);
+  	});
+	
+	$('#left span').click(function(){
+		$('#left b').text(parseInt($('#left b').text())+1)
+	})
+	$('#right span').click(function(){
+		$('#right b').text(parseInt($('#right b').text())+1)
+	})
+</script>
