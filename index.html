@@ -19,7 +19,7 @@ title: Home
 <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"type="text/javascript" charset="utf-8"></script>
 <script language="JavaScript">
 	//create
-	AV.initialize("{{site.data.settings.leancloud.app_id}}", "{{site.data.settings.leancloud.app_id}}");
+	AV.initialize("{{site.data.settings.leancloud.app_id}}", "{{site.data.settings.leancloud.app_key}}");
 	var Icons = AV.Object.extend('icon_count');
 	var leftIcon = new Icons();
 	leftIcon.id = '5a571b26ac502e006e148b8f';
