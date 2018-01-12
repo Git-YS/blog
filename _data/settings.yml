@@ -32,6 +32,6 @@ post_date_prefix: '正在憋。。。'
 
 #leancloud settings
 leancloud:
-  enable: false
+  enable: true
   app_id: vJaVl4FYwwO45785XEAm3Owt-gzGzoHsz
   app_key: 2m3hhHU0cpRCTvcIUBhtQKcO

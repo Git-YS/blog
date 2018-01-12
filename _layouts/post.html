@@ -53,6 +53,44 @@ layout: default
   {% endif %}
 
 </div>
+{% if site.data.settings.leancloud.enable %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"type="text/javascript" charset="utf-8"></script>
 <script language="JavaScript">
-	
+	//class from cloud
+	var Page = AV.Object.extend("page_count");
+	AV.initialize("{{site.data.settings.leancloud.app_id}}", "{{site.data.settings.leancloud.app_key}}");
+	var query = new AV.Query('page_count');
+	query.equalTo('url', '{{ site.github.url }}{{ page.url }}');
+	query.find().then(function (results){
+		if(results.length==0){
+			//first view
+			var oldPage=new Page();
+			oldPage.set('title','{{ page.title }}');
+			oldPage.set('url','{{ site.github.url }}{{ page.url }}');
+			oldPage.set('count',1);
+			// Set ACL 
+      var acl = new AV.ACL();
+      acl.setPublicReadAccess(true);
+      acl.setPublicWriteAccess(true);
+      oldPage.setACL(acl);
+			oldPage.save(null,
+				{success:function(newPage){
+				$('.pv').text(newPage.get('count'));
+				}})
+		}else if(results.length==1){
+			var oldPage=results[0];
+			oldPage.set('title','{{ page.title }}');
+			oldPage.increment("count");
+			//atomicity
+			oldPage.fetchWhenSave(true);
+			oldPage.save(null,
+				{success:function(newPage){
+				$('.pv').text(newPage.get('count'));
+				}})
+		}
+	},function (error) {
+		console.log(error);
+	})
 </script>
+{% endif %}

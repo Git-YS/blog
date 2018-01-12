@@ -16,6 +16,14 @@ title: Home
 	</div>	
 	<div class="thanks" align="center" style="display: none;"><h2>Thank you for voting !!</h2></div>
 </div>
+<div class="post-share" align="right">
+    <div class="post-date">{{ site.data.settings.sharing_button_prompt }}</div>
+    <div class="sharing-icons">
+    	<a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.github.url }}{{ page.url }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    	<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    	<a href="https://service.weibo.com/share/share.php?url={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+    </div>
+</div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"type="text/javascript" charset="utf-8"></script>
 <script language="JavaScript">
