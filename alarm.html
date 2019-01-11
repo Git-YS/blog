@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>alarm</title>
+    <style>
+        input {
+            width: 100px;
+            margin-right: 10px;
+            text-align: center;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <form>
+        <input name="hour" id="hour"><label for="hour">小时</label>
+        <input name="minute" id="minute"><label for="minute">分钟</label>
+        <input name="second" id="second"><label for="second">秒</label>
+        <button type="button" id="start">开始</button>
+        <button type="reset">清空</button>
+    </form>
+</div>
+<div id="time" style="text-align: center;display: none">
+    <h1 style="font-size: 200px"></h1>
+    <button id="stop" style="width: 200px;height: 100px;font-size: 50px;font-weight: bolder">停止</button>
+</div>
+</body>
+<script>
+    var $time = document.getElementById('time').getElementsByTagName('h1')[0];
+    var isStop = true;
+    function run() {
+        let maxtime = $time.dataset.time * 1  ;
+        $time.dataset.time = maxtime - 1;
+        console.log(!isStop)
+        if(!isStop){
+            if ( maxtime > 0) {
+                var _hours = Math.floor(maxtime / 60 / 60 % 24);
+                var _minutes = Math.floor(maxtime / 60 % 60);
+                var _seconds = Math.floor(maxtime % 60);
+                var _msg = (_hours ? _hours + ':' : '')
+                    + (_minutes ? _minutes + ':' : '')
+                    + _seconds;
+                $time.innerHTML = _msg;
+                setTimeout(run, 1000);
+            } else {
+                $time.innerHTML = 0;
+                alert('结束了')
+            }
+        }
+        return
+    }
+
+    document.getElementById('start').onclick = function () {
+        var _hours = document.getElementById('hour').value;
+        var _minutes = document.getElementById('minute').value;
+        var _seconds = document.getElementById('second').value;
+        $time.dataset.time = _hours * 60 * 60
+            + _minutes * 60
+            + _seconds;
+        document.getElementById('time').style.display = 'block';
+        isStop = true;
+        setTimeout(function () {
+            isStop = false;
+            run();
+        },1000);
+    };
+
+    document.getElementById('stop').onclick = function () {
+        isStop = true;
+        $time.innerHTML = '';
+        document.getElementById('time').style.display = 'none';
+    }
+
+</script>
+</html>
