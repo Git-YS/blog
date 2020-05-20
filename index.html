@@ -2,28 +2,19 @@
 layout: default
 title: Home
 ---
-<h2 align="center">左 还是 右 这是一个问题？</h2>
-<div class="icon_choose">
-	<div id="left" style="width: 50%;float: left;">
-		<img style="width: 50%;height: 200px;background-color: darkgrey;" /><br>
-		<div align="center"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;<b id='left-val'>0</b><br>
-		<span class="pagination-button">似乎左边不错</span></div>
-	</div>	
-	<div id="right" style="width: 50%;float: left;">
-		<img style="width: 50%;height: 200px;background-color: darkseagreen;" /><br>
-		<div align="center"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;<b>0</b><br>
-		<span class="pagination-button">还是选择右边</span></div>
-	</div>	
-	<div class="thanks" align="center" style="display: none;"><h2>Thank you for voting !!</h2></div>
+<h2 align="center">琦琦，我们已经在一起</h2>
+<div class="timer">
+	<b id="d"></b> 天 <b id="h"></b> 小时 <b id="m"></b> 分钟 <b id="s"></b> 秒
 </div>
-<div class="post-share" align="right">
-    <div class="post-date">{{ site.data.settings.sharing_button_prompt }}</div>
-    <div class="sharing-icons">
-    	<a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.github.url }}{{ page.url }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    	<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-    	<a href="https://service.weibo.com/share/share.php?url={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank"><i class="fa fa-weibo" aria-hidden="true"></i></a>
-    </div>
-</div>
+<a>这些日子中</a>
+<!--<div class="post-share" align="right">-->
+<!--    <div class="post-date">{{ site.data.settings.sharing_button_prompt }}</div>-->
+<!--    <div class="sharing-icons">-->
+<!--    	<a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.github.url }}{{ page.url }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
+<!--    	<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+<!--    	<a href="https://service.weibo.com/share/share.php?url={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank"><i class="fa fa-weibo" aria-hidden="true"></i></a>-->
+<!--    </div>-->
+<!--</div>-->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"type="text/javascript" charset="utf-8"></script>
 <script language="JavaScript">
@@ -65,4 +56,29 @@ title: Home
 		$('.icon_choose span').hide();
 		$('.thanks').show();
 	})
+</script>
+<script>
+	function timer() {
+		var start = new Date(2019, 4, 10);
+		var t = new Date() - start;
+		var h = ~~(t / 1000 / 60 / 60 % 24);
+		if (h < 10) {
+			h = "0" + h;
+		}
+		var m = ~~(t / 1000 / 60 % 60);
+		if (m < 10) {
+			m = "0" + m;
+		}
+
+		var s = ~~(t / 1000 % 60);
+		if (s < 10) {
+			s = "0" + s;
+		}
+		document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+		document.getElementById('h').innerHTML = h;
+		document.getElementById('m').innerHTML = m;
+		document.getElementById('s').innerHTML = s;
+	}
+	timer();
+	setInterval(timer, 1000);
 </script>
