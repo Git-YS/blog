@@ -4,11 +4,11 @@ disqus:
   disqus_shortname: 'millennial-3'
 
 menu:
-- {name: 'Blogs', folder: 'pages', file: 'documentation/index.html'}
-- {name: 'Tags', folder: 'pages', file: 'tags/index.html'}
-- {name: 'Gallery', folder: 'pages', file: 'gallery/index.html'}
-- {name: 'About', folder: 'pages', file: 'about/index.html'}
-- {name: 'Pending', folder: 'pages', file: 'resources/index.html'}
+#- {name: 'Blogs', folder: 'pages', file: 'documentation/index.html'}
+#- {name: 'Tags', folder: 'pages', file: 'tags/index.html'}
+#- {name: 'Gallery', folder: 'pages', file: 'gallery/index.html'}
+#- {name: 'About', folder: 'pages', file: 'about/index.html'}
+#- {name: 'Pending', folder: 'pages', file: 'resources/index.html'}
 #- {name: '可以请别联系我', folder: 'pages', file: 'contact/index.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
