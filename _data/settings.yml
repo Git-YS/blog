@@ -15,7 +15,7 @@ menu:
 social:
 #- {icon: 'weibo', link: 'https://weibo.com/'}
 #- {icon: 'user', link: 'https://www.facebook.com/'}
-- {icon: 'instagram', link: 'https://instagram.com/h.s_l_f', desc: 'ins'}
+- {icon: 'instagram', link: 'https://instagram.com/', desc: 'ins'}
 - {icon: 'envelope', link: 'mailto:jsymsong@gmail.com', desc: 'mail'}
 # - {icon: 'rss-square', link: 'rss-feed.xml'}
 
